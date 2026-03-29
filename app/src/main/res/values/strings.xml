@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">Roamist</string>
+    <string name="header_hunza">Northern Pakistan — Hunza Valley</string>
+    <string name="plan_trip">Plan Trip</string>
+    <string name="trending_destinations">Trending in Pakistan</string>
+    <string name="enable_gps_tracking">Enable GPS Tracking</string>
+    <string name="filter_trips">Filter Trips</string>
+    <string name="apply_filters">Apply Filters</string>
+    <string name="app_settings">App Settings</string>
+    <string name="travel_preferences">Travel Preferences</string>
+    <string name="amount_pkr">Amount (PKR)</string>
+    <string name="nearby_stays">Nearby Stays</string>
+    <string name="search_destinations">Search destinations…</string>
+
+    <!-- Signup -->
+    <string name="signup_title">Create Account</string>
+    <string name="signup_subtitle">Fill in the details to get started</string>
+    <string name="label_full_name">Full Name</string>
+    <string name="label_email">Email Address</string>
+    <string name="label_phone">Phone Number</string>
+    <string name="label_password">Password</string>
+    <string name="label_confirm_password">Confirm Password</string>
+    <string name="btn_create_account">Create Account</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="link_sign_in">Sign In</string>
+    <string name="tagline_signup">Discover Pakistan, one trip at a time</string>
+    <string name="terms_note">By signing up you agree to our Terms of Service and Privacy Policy.</string>
+
+    <!-- Login -->
+    <string name="login_title">Sign In</string>
+    <string name="login_subtitle">Enter your credentials to continue</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="btn_sign_in">Sign In</string>
+    <string name="tagline_login">Welcome back, wanderer</string>
+    <string name="new_to_roamist">New to Roamist?</string>
+    <string name="link_create_account">Create Account</string>
+    <string name="google_continue">G  Continue with Google</string>
+
+    <!-- Profile -->
+    <string name="profile_screen_title">My Profile</string>
+    <string name="section_personal_info">Personal Information</string>
+    <string name="section_travel_prefs">Travel Preferences</string>
+    <string name="section_account_settings">Account Settings</string>
+    <string name="label_trips">Trips</string>
+    <string name="label_cities">Cities</string>
+    <string name="label_reviews">Reviews</string>
+    <string name="label_full_name_short">Full Name</string>
+    <string name="label_city">City</string>
+    <string name="label_cnic">CNIC</string>
+    <string name="label_travel_style">Travel Style</string>
+    <string name="label_budget_range">Budget Range</string>
+    <string name="label_fav_regions">Favourite Regions</string>
+    <string name="label_language">Language</string>
+    <string name="label_change_password">Change Password</string>
+    <string name="label_notifications">Notifications</string>
+    <string name="label_privacy">Privacy &amp; Security</string>
+    <string name="label_gps_tracking">GPS Tracking</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="btn_edit">Edit</string>
+    <string name="member_since">Roamist Member since 2023</string>
+    <string name="notifications">Notifications</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_back_magazine">Back to magazine</string>
+    <string name="trip_checklist_title">Trip checklist</string>
+    <string name="trip_planning_label">Planning: %1$s</string>
+    <string name="trip_checklist_done">Back</string>
+
+    <string name="legal_privacy_body">Roamist collects only what helps plan your trip: name, contact, and bookings. We never sell personal data. Location is used only when you enable GPS in-app. You may request deletion anytime via support.\n\nThis demonstration app does not connect to a live backend — nothing leaves your device except actions you explicitly trigger (e.g. email).</string>
+    <string name="legal_terms_body">By using Roamist you agree to accurate booking details, respectful local conduct, and compliance with regional travel rules. Cancellations follow the fare shown at checkout. Guides are independent partners; Roamist coordinates logistics only.\n\nDemo build: no binding contract or payment is processed.</string>
+</resources>

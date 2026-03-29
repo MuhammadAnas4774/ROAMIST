@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roamist – Pakistan Travel App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== APP SHELL ===== -->
+<div class="app-shell" id="appShell">
+
+  <!-- ── SCREEN: HOME DASHBOARD (L1) ── -->
+  <div class="screen active" id="screen-home">
+    <div class="hero-header" id="heroHeader">
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1617450365226-9bf28a042d02?w=800&q=80" alt="Hunza Valley" onerror="this.style.display='none'">
+        <div class="hero-gradient"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-top">
+          <div class="hero-logo">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2L26 24H2L14 2Z" fill="#FFD700" opacity="0.9"/><circle cx="14" cy="14" r="5" fill="white" opacity="0.3"/></svg>
+            <span>Roamist</span>
+          </div>
+          <div class="hero-actions">
+            <button class="icon-btn" id="notifBtn" onclick="showScreen('notifications')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              <span class="notif-dot">3</span>
+            </button>
+            <button class="icon-btn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="hero-text">
+          <p class="hero-greeting">Assalam-o-Alaikum 👋</p>
+          <h1 class="hero-title">Explore <span class="gold">Beautiful</span><br>Pakistan</h1>
+          <p class="hero-sub">خوش آمدید • 47,000+ destinations</p>
+        </div>
+        <div class="search-bar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" placeholder="Search Hunza, Skardu, Lahore…" id="searchInput">
+          <button class="filter-btn" onclick="showScreen('filter')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#01411C" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-content">
+      <!-- Quick Categories -->
+      <div class="section-header"><h2>Browse by Region</h2><a href="#" onclick="showScreen('explore'); return false;">See all</a></div>
+      <div class="quick-cats">
+        <button class="cat-pill active">🏔️ Northern</button>
+        <button class="cat-pill">🕌 Cultural</button>
+        <button class="cat-pill">🌿 Nature</button>
+        <button class="cat-pill">🍛 Food</button>
+        <button class="cat-pill">🏛️ Heritage</button>
+      </div>
+
+      <!-- Trending Destinations -->
+      <div class="section-header"><h2>Trending Now</h2><span class="badge-hot">🔥 Hot</span></div>
+      <div class="dest-list">
+        <!-- Card 1 -->
+        <div class="dest-card" onclick="showScreen('detail')">
+          <div class="dest-card-img">
+            <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=400&q=80" alt="Hunza Valley" onerror="this.parentElement.style.background='linear-gradient(135deg,#1E3A5F,#01411C)'">
+            <div class="dest-card-overlay">
+              <span class="dest-rating">⭐ 4.9</span>
+              <button class="dest-save" onclick="event.stopPropagation(); this.classList.toggle('saved')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+            <span class="dest-tag">🏔️ Northern Areas</span>
+          </div>
+          <div class="dest-card-body">
+            <div class="dest-info">
+              <div>
+                <h3>Hunza Valley</h3>
+                <p class="dest-urdu">وادی ہنزہ</p>
+                <p class="dest-loc">📍 Gilgit-Baltistan</p>
+              </div>
+              <div class="dest-price">
+                <span class="price-label">From</span>
+                <span class="price-val">Rs. 45,000</span>
+              </div>
+            </div>
+            <div class="dest-meta">
+              <span>🗓️ Best: Apr–Oct</span>
+              <span>🚌 12h from ISB</span>
+            </div>
+            <div class="dest-actions">
+              <button class="btn-secondary" onclick="event.stopPropagation()">Share</button>
+              <button class="btn-primary" onclick="event.stopPropagation()">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="dest-card" onclick="showScreen('detail')">
+          <div class="dest-card-img" style="background: linear-gradient(135deg,#1a2a4a,#2d4a6b)">
+            <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=400&q=80" alt="Skardu" onerror="this.style.display='none'">
+            <div class="dest-card-overlay">
+              <span class="dest-rating">⭐ 4.8</span>
+              <button class="dest-save" onclick="event.stopPropagation(); this.classList.toggle('saved')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+            <span class="dest-tag">🏔️ Northern Areas</span>
+          </div>
+          <div class="dest-card-body">
+            <div class="dest-info">
+              <div>
+                <h3>Skardu</h3>
+                <p class="dest-urdu">سکردو</p>
+                <p class="dest-loc">📍 Gilgit-Baltistan</p>
+              </div>
+              <div class="dest-price">
+                <span class="price-label">From</span>
+                <span class="price-val">Rs. 38,500</span>
+              </div>
+            </div>
+            <div class="dest-meta">
+              <span>🗓️ Best: Jun–Sep</span>
+              <span>✈️ 1h from ISB</span>
+            </div>
+            <div class="dest-actions">
+              <button class="btn-secondary" onclick="event.stopPropagation()">Share</button>
+              <button class="btn-primary" onclick="event.stopPropagation()">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="dest-card" onclick="showScreen('detail')">
+          <div class="dest-card-img" style="background: linear-gradient(135deg,#5a2a0a,#8B4513)">
+            <img src="https://images.unsplash.com/photo-1609078575285-d6b2b35e6c81?w=400&q=80" alt="Lahore" onerror="this.style.display='none'">
+            <div class="dest-card-overlay">
+              <span class="dest-rating">⭐ 4.7</span>
+              <button class="dest-save" onclick="event.stopPropagation(); this.classList.toggle('saved')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+            <span class="dest-tag">🕌 Cultural</span>
+          </div>
+          <div class="dest-card-body">
+            <div class="dest-info">
+              <div>
+                <h3>Lahore Fort</h3>
+                <p class="dest-urdu">شاہی قلعہ</p>
+                <p class="dest-loc">📍 Punjab</p>
+              </div>
+              <div class="dest-price">
+                <span class="price-label">From</span>
+                <span class="price-val">Rs. 12,000</span>
+              </div>
+            </div>
+            <div class="dest-meta">
+              <span>🗓️ Best: Oct–Mar</span>
+              <span>🚄 4h from ISB</span>
+            </div>
+            <div class="dest-actions">
+              <button class="btn-secondary" onclick="event.stopPropagation()">Share</button>
+              <button class="btn-primary" onclick="event.stopPropagation()">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nearby Carousel (L8) -->
+      <div class="section-header"><h2>Nearby Experiences</h2></div>
+      <div class="carousel-wrap">
+        <div class="carousel" id="nearbyCarousel">
+          <div class="carousel-card">
+            <div class="carousel-icon food">🍜</div>
+            <p class="carousel-title">Food Street</p>
+            <p class="carousel-sub">Lahore</p>
+            <span class="carousel-dist">2.1 km</span>
+          </div>
+          <div class="carousel-card">
+            <div class="carousel-icon heritage">🏛️</div>
+            <p class="carousel-title">Mohenjo-daro</p>
+            <p class="carousel-sub">Sindh</p>
+            <span class="carousel-dist">500 km</span>
+          </div>
+          <div class="carousel-card">
+            <div class="carousel-icon trek">⛺</div>
+            <p class="carousel-title">Fairy Meadows</p>
+            <p class="carousel-sub">Gilgit-Baltistan</p>
+            <span class="carousel-dist">580 km</span>
+          </div>
+          <div class="carousel-card">
+            <div class="carousel-icon mosque">🕌</div>
+            <p class="carousel-title">Badshahi Mosque</p>
+            <p class="carousel-sub">Lahore</p>
+            <span class="carousel-dist">1.4 km</span>
+          </div>
+          <div class="carousel-card">
+            <div class="carousel-icon nature">🌿</div>
+            <p class="carousel-title">Naran Kaghan</p>
+            <p class="carousel-sub">KPK</p>
+            <span class="carousel-dist">310 km</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interest Tags (L10) -->
+      <div class="section-header"><h2>Your Interests</h2></div>
+      <div class="tags-flow" id="tagsFlow">
+        <span class="tag-chip active">🏔️ Adventure</span>
+        <span class="tag-chip">🏛️ Culture</span>
+        <span class="tag-chip active">🍛 Food</span>
+        <span class="tag-chip">📜 History</span>
+        <span class="tag-chip active">🌿 Nature</span>
+        <span class="tag-chip">📷 Photography</span>
+      </div>
+      <div style="height:100px"></div>
+    </div>
+
+    <!-- FAB -->
+    <button class="fab" onclick="showScreen('filter')" id="fabBtn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+      Plan Trip
+    </button>
+  </div>
+
+  <!-- ── SCREEN: EXPLORE GRID (L6) ── -->
+  <div class="screen" id="screen-explore">
+    <div class="screen-header green-header">
+      <button class="back-btn" onclick="showScreen('home')">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <h2>Explore Pakistan</h2>
+      <button class="icon-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+    </div>
+    <div class="explore-content">
+      <p class="explore-sub">پاکستان کی سیر کریں • Choose your region</p>
+      <div class="regions-grid">
+        <!-- Featured span-2 -->
+        <div class="region-card featured" onclick="showScreen('home')">
+          <div class="region-img" style="background: linear-gradient(135deg, #0a2a4a 0%, #1E3A5F 40%, #01411C 100%)">
+            <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=600&q=75" alt="Northern Areas" onerror="this.style.display='none'" style="opacity:0.7">
+          </div>
+          <div class="region-overlay">
+            <div class="region-badge">⭐ Featured</div>
+            <h3>Northern Areas</h3>
+            <p>شمالی علاقہ جات</p>
+            <span>142 destinations • Hunza, Skardu, Gilgit</span>
+          </div>
+        </div>
+        <!-- Punjab -->
+        <div class="region-card" onclick="showScreen('home')">
+          <div class="region-img" style="background: linear-gradient(135deg,#8B4513,#D2691E)">
+            <div class="region-icon">🌾</div>
+          </div>
+          <div class="region-overlay">
+            <h3>Punjab</h3>
+            <p>پنجاب</p>
+            <span>58 trips • Lahore, Multan</span>
+          </div>
+        </div>
+        <!-- Sindh -->
+        <div class="region-card" onclick="showScreen('home')">
+          <div class="region-img" style="background: linear-gradient(135deg,#1a5276,#2980b9)">
+            <div class="region-icon">🌊</div>
+          </div>
+          <div class="region-overlay">
+            <h3>Sindh</h3>
+            <p>سندھ</p>
+            <span>35 trips • Karachi, Mohenjo-daro</span>
+          </div>
+        </div>
+        <!-- KPK -->
+        <div class="region-card" onclick="showScreen('home')">
+          <div class="region-img" style="background: linear-gradient(135deg,#145a32,#1e8449)">
+            <div class="region-icon">🌲</div>
+          </div>
+          <div class="region-overlay">
+            <h3>KPK</h3>
+            <p>خیبر پختونخوا</p>
+            <span>47 trips • Swat, Peshawar</span>
+          </div>
+        </div>
+        <!-- Balochistan -->
+        <div class="region-card" onclick="showScreen('home')">
+          <div class="region-img" style="background: linear-gradient(135deg,#C2B280,#8B6914)">
+            <div class="region-icon">🏜️</div>
+          </div>
+          <div class="region-overlay">
+            <h3>Balochistan</h3>
+            <p>بلوچستان</p>
+            <span>29 trips • Quetta, Gwadar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCREEN: BOOKING HISTORY (L7) ── -->
+  <div class="screen" id="screen-trips">
+    <div class="screen-header green-header">
+      <button class="back-btn" onclick="showScreen('home')">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <h2>My Trips</h2>
+      <button class="icon-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="trips-content">
+      <div class="trips-summary">
+        <div class="summary-stat"><span class="stat-num">7</span><span>Total Trips</span></div>
+        <div class="summary-stat"><span class="stat-num">Rs. 2.1L</span><span>Total Spent</span></div>
+        <div class="summary-stat"><span class="stat-num">4</span><span>Countries</span></div>
+      </div>
+      <div class="booking-table">
+        <div class="table-header">
+          <span>Date</span><span>Destination</span><span>Status</span><span>Amount</span>
+        </div>
+        <div class="table-row" onclick="showScreen('detail')">
+          <span class="td-date">12 Mar 2024</span>
+          <span class="td-dest"><strong>Hunza Valley</strong><small>وادی ہنزہ</small></span>
+          <span><span class="status-badge completed">Completed</span></span>
+          <span class="td-amt">Rs. 45,000</span>
+        </div>
+        <div class="table-row" onclick="showScreen('detail')">
+          <span class="td-date">05 Feb 2024</span>
+          <span class="td-dest"><strong>Skardu</strong><small>سکردو</small></span>
+          <span><span class="status-badge upcoming">Upcoming</span></span>
+          <span class="td-amt">Rs. 38,500</span>
+        </div>
+        <div class="table-row" onclick="showScreen('detail')">
+          <span class="td-date">20 Jan 2024</span>
+          <span class="td-dest"><strong>Swat Valley</strong><small>وادی سوات</small></span>
+          <span><span class="status-badge completed">Completed</span></span>
+          <span class="td-amt">Rs. 28,000</span>
+        </div>
+        <div class="table-row" onclick="showScreen('detail')">
+          <span class="td-date">10 Dec 2023</span>
+          <span class="td-dest"><strong>Lahore Fort</strong><small>شاہی قلعہ</small></span>
+          <span><span class="status-badge completed">Completed</span></span>
+          <span class="td-amt">Rs. 12,500</span>
+        </div>
+        <div class="table-row" onclick="showScreen('detail')">
+          <span class="td-date">15 Apr 2024</span>
+          <span class="td-dest"><strong>Naran Kaghan</strong><small>ناران کاغان</small></span>
+          <span><span class="status-badge upcoming">Upcoming</span></span>
+          <span class="td-amt">Rs. 32,000</span>
+        </div>
+        <div class="table-row" onclick="showScreen('detail')">
+          <span class="td-date">01 Nov 2023</span>
+          <span class="td-dest"><strong>Mohenjo-daro</strong><small>موہنجو دڑو</small></span>
+          <span><span class="status-badge cancelled">Cancelled</span></span>
+          <span class="td-amt">Rs. 18,000</span>
+        </div>
+        <div class="table-row" onclick="showScreen('detail')">
+          <span class="td-date">22 Jun 2024</span>
+          <span class="td-dest"><strong>Fairy Meadows</strong><small>فیری میڈوز</small></span>
+          <span><span class="status-badge upcoming">Upcoming</span></span>
+          <span class="td-amt">Rs. 52,000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCREEN: SAVED (L2 Detail) ── -->
+  <div class="screen" id="screen-saved">
+    <div class="screen-header green-header">
+      <button class="back-btn" onclick="showScreen('home')">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <h2>Saved Places</h2>
+      <span class="header-count">4 saved</span>
+    </div>
+    <div class="saved-content">
+      <div class="saved-card" onclick="showScreen('detail')">
+        <div class="saved-img" style="background:linear-gradient(135deg,#0a2a4a,#1E3A5F)">
+          <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=200&q=70" alt="Hunza" onerror="this.style.display='none'">
+        </div>
+        <div class="saved-info">
+          <h3>Hunza Valley <span class="lang-urdu">وادی ہنزہ</span></h3>
+          <p>📍 Gilgit-Baltistan • ⭐ 4.9</p>
+          <p class="saved-desc">Gateway to Karakoram. Surrounded by snow-capped peaks and cultural heritage.</p>
+          <div class="saved-actions">
+            <button class="btn-outline" onclick="event.stopPropagation()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Share
+            </button>
+            <button class="btn-primary-sm" onclick="event.stopPropagation()">Book</button>
+          </div>
+        </div>
+        <button class="saved-remove" onclick="event.stopPropagation(); this.closest('.saved-card').style.opacity='0.3'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#e74c3c" stroke="#e74c3c" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="saved-card" onclick="showScreen('detail')">
+        <div class="saved-img" style="background:linear-gradient(135deg,#1a5276,#2980b9)">
+          <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=200&q=70" alt="Skardu" onerror="this.style.display='none'">
+        </div>
+        <div class="saved-info">
+          <h3>Skardu <span class="lang-urdu">سکردو</span></h3>
+          <p>📍 Gilgit-Baltistan • ⭐ 4.8</p>
+          <p class="saved-desc">Gateway to K2 and Deosai Plains. Adventure capital of Pakistan.</p>
+          <div class="saved-actions">
+            <button class="btn-outline" onclick="event.stopPropagation()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Share
+            </button>
+            <button class="btn-primary-sm" onclick="event.stopPropagation()">Book</button>
+          </div>
+        </div>
+        <button class="saved-remove" onclick="event.stopPropagation(); this.closest('.saved-card').style.opacity='0.3'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#e74c3c" stroke="#e74c3c" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="saved-card" onclick="showScreen('detail')">
+        <div class="saved-img" style="background:linear-gradient(135deg,#145a32,#1e8449)">
+        </div>
+        <div class="saved-info">
+          <h3>Fairy Meadows <span class="lang-urdu">فیری میڈوز</span></h3>
+          <p>📍 Diamer, GB • ⭐ 4.9</p>
+          <p class="saved-desc">Alpine meadow below Nanga Parbat, world's 9th highest peak.</p>
+          <div class="saved-actions">
+            <button class="btn-outline" onclick="event.stopPropagation()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Share
+            </button>
+            <button class="btn-primary-sm" onclick="event.stopPropagation()">Book</button>
+          </div>
+        </div>
+        <button class="saved-remove" onclick="event.stopPropagation(); this.closest('.saved-card').style.opacity='0.3'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#e74c3c" stroke="#e74c3c" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div style="height:80px"></div>
+    </div>
+  </div>
+
+  <!-- ── SCREEN: PROFILE + SETTINGS (L4) ── -->
+  <div class="screen" id="screen-profile">
+    <div class="profile-hero">
+      <button class="back-btn white-back" onclick="showScreen('home')">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="profile-avatar">
+        <div class="avatar-circle">AK</div>
+        <div class="avatar-verified">✓</div>
+      </div>
+      <h2 class="profile-name">Ali Khan</h2>
+      <p class="profile-handle">@ali.roamist • Explorer Level 4</p>
+      <div class="profile-stats">
+        <div><span>12</span><small>Trips</small></div>
+        <div><span>48</span><small>Reviews</small></div>
+        <div><span>234</span><small>Followers</small></div>
+      </div>
+    </div>
+    <div class="settings-list">
+      <!-- Settings (L4) -->
+      <div class="settings-section-title">Preferences</div>
+      <div class="settings-row">
+        <div class="settings-icon green"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="settings-text"><span>Enable GPS Tracking</span><small>Get location-based recommendations</small></div>
+        <label class="toggle-switch">
+          <input type="checkbox" checked id="gpsToggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <div class="settings-row">
+        <div class="settings-icon blue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+        <div class="settings-text"><span>Push Notifications</span><small>Booking alerts and weather warnings</small></div>
+        <label class="toggle-switch">
+          <input type="checkbox" checked id="notifToggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <div class="settings-row">
+        <div class="settings-icon gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="settings-text"><span>Currency: PKR</span><small>Pakistani Rupee (₨)</small></div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="settings-row">
+        <div class="settings-icon purple"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+        <div class="settings-text"><span>Language</span><small>English / اردو</small></div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="settings-section-title">Travel Interests (L10)</div>
+      <div class="tags-flow profile-tags">
+        <span class="tag-chip active" onclick="this.classList.toggle('active')">🏔️ Adventure</span>
+        <span class="tag-chip" onclick="this.classList.toggle('active')">🏛️ Culture</span>
+        <span class="tag-chip active" onclick="this.classList.toggle('active')">🍛 Food</span>
+        <span class="tag-chip" onclick="this.classList.toggle('active')">📜 History</span>
+        <span class="tag-chip active" onclick="this.classList.toggle('active')">🌿 Nature</span>
+        <span class="tag-chip" onclick="this.classList.toggle('active')">📷 Photography</span>
+      </div>
+      <div class="settings-section-title">Support</div>
+      <div class="settings-row">
+        <div class="settings-icon red"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></div>
+        <div class="settings-text"><span>Sign Out</span><small>ali@roamist.pk</small></div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div style="height:100px"></div>
+    </div>
+  </div>
+
+  <!-- ── SCREEN: DETAIL (L2) ── -->
+  <div class="screen" id="screen-detail">
+    <div class="detail-hero">
+      <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=800&q=80" alt="Hunza Valley" onerror="this.style.background='linear-gradient(135deg,#1E3A5F,#01411C)'">
+      <div class="detail-overlay"></div>
+      <button class="back-btn detail-back" onclick="goBack()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="detail-hero-text">
+        <h1>Hunza Valley</h1>
+        <p class="detail-urdu">وادی ہنزہ</p>
+        <div class="detail-meta-row">
+          <span class="detail-rating">⭐ 4.9 (2.4k reviews)</span>
+          <span class="detail-loc">📍 Gilgit-Baltistan</span>
+        </div>
+      </div>
+    </div>
+    <div class="detail-content">
+      <div class="detail-price-row">
+        <div>
+          <span class="price-from">From</span>
+          <span class="price-big">Rs. 45,000</span>
+          <span class="price-per">/person</span>
+        </div>
+        <div class="detail-weather">
+          <span>☀️ 18°C</span>
+          <span class="weather-best">Best: Apr–Oct</span>
+        </div>
+      </div>
+      <!-- Guide -->
+      <div class="guide-row">
+        <div class="guide-avatar">AJ</div>
+        <div>
+          <p class="guide-name">Ahmad Jamal – Local Guide</p>
+          <p class="guide-meta">⭐ 4.9 • 312 tours completed</p>
+        </div>
+        <button class="btn-outline-sm">Contact</button>
+      </div>
+      <p class="detail-desc">Hunza Valley, nestled in the Karakoram mountain range, is one of Pakistan's most breathtaking destinations. Known for its apricot blossoms in spring and golden foliage in autumn, this ancient kingdom offers unparalleled natural beauty.</p>
+      <h3 class="section-title-sm">Highlights</h3>
+      <div class="highlights-row">
+        <div class="highlight-item"><span>🏰</span><p>Baltit Fort</p></div>
+        <div class="highlight-item"><span>💎</span><p>Attabad Lake</p></div>
+        <div class="highlight-item"><span>🌸</span><p>Cherry Blossom</p></div>
+        <div class="highlight-item"><span>🏔️</span><p>Rakaposhi View</p></div>
+      </div>
+      <h3 class="section-title-sm">Transport Options</h3>
+      <div class="transport-row">
+        <div class="transport-item active">🚌 Daewoo Bus<br><small>Rs. 3,500</small></div>
+        <div class="transport-item">✈️ PIA Gilgit<br><small>Rs. 18,000</small></div>
+        <div class="transport-item">🚗 Private Car<br><small>Rs. 25,000</small></div>
+      </div>
+      <div class="detail-cta-row">
+        <button class="btn-wishlist" onclick="this.classList.toggle('wishlisted')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Wishlist
+        </button>
+        <button class="btn-share-detail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Share
+        </button>
+        <button class="btn-book-detail">🎫 Book Now – Rs. 45,000</button>
+      </div>
+      <div style="height:40px"></div>
+    </div>
+  </div>
+
+  <!-- ── SCREEN: FILTER (L9) ── -->
+  <div class="screen screen-modal" id="screen-filter">
+    <div class="modal-backdrop" onclick="goBack()"></div>
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <h2 class="modal-title">Filter & Sort Trips</h2>
+      <p class="modal-sub">پاکستان بھر میں تلاش کریں</p>
+      <h3 class="filter-section-title">Sort By</h3>
+      <div class="radio-group" id="sortGroup">
+        <label class="radio-option selected">
+          <input type="radio" name="sort" value="price" checked>
+          <span class="radio-custom"></span>
+          <div class="radio-text"><span>Price: Low to High</span><small>Best value trips first</small></div>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="sort" value="rating">
+          <span class="radio-custom"></span>
+          <div class="radio-text"><span>Top Rated (4.5+)</span><small>Highest community ratings</small></div>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="sort" value="distance">
+          <span class="radio-custom"></span>
+          <div class="radio-text"><span>Nearest to Me</span><small>Based on your location</small></div>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="sort" value="season">
+          <span class="radio-custom"></span>
+          <div class="radio-text"><span>Best Season: Mar–May</span><small>Currently optimal destinations</small></div>
+        </label>
+      </div>
+      <h3 class="filter-section-title">Budget Range (PKR)</h3>
+      <div class="range-row">
+        <span>Rs. 5,000</span>
+        <input type="range" class="range-slider" min="5000" max="200000" value="50000" id="budgetRange" oninput="document.getElementById('budgetVal').textContent='Rs. '+parseInt(this.value).toLocaleString()">
+        <span id="budgetVal">Rs. 50,000</span>
+      </div>
+      <h3 class="filter-section-title">Region</h3>
+      <div class="filter-chips">
+        <span class="filter-chip active">All</span>
+        <span class="filter-chip">Northern</span>
+        <span class="filter-chip">Punjab</span>
+        <span class="filter-chip">Sindh</span>
+        <span class="filter-chip">KPK</span>
+        <span class="filter-chip">Balochistan</span>
+      </div>
+      <button class="apply-btn" onclick="goBack()">✓ Apply Filters</button>
+    </div>
+  </div>
+
+  <!-- ── SCREEN: NOTIFICATIONS (L5) ── -->
+  <div class="screen screen-modal" id="screen-notifications">
+    <div class="modal-backdrop" onclick="goBack()"></div>
+    <div class="modal-sheet notif-sheet">
+      <div class="modal-handle"></div>
+      <div class="notif-header-row">
+        <h2 class="modal-title">Notifications</h2>
+        <span class="notif-badge-big">3</span>
+      </div>
+      <div class="notif-list">
+        <div class="notif-item unread">
+          <div class="notif-icon green">✈️</div>
+          <div class="notif-text">
+            <p><strong>Booking Confirmed!</strong></p>
+            <p>Hunza Valley trip for April 15 is confirmed. Booking ID: RMT-2847</p>
+            <span class="notif-time">2 hours ago</span>
+          </div>
+        </div>
+        <div class="notif-item unread">
+          <div class="notif-icon orange">⛈️</div>
+          <div class="notif-text">
+            <p><strong>Weather Alert – Skardu</strong></p>
+            <p>Heavy snowfall expected Feb 5–7. Consider travel advisory.</p>
+            <span class="notif-time">5 hours ago</span>
+          </div>
+        </div>
+        <div class="notif-item unread">
+          <div class="notif-icon gold">🎉</div>
+          <div class="notif-text">
+            <p><strong>Flash Deal: Murree Weekend</strong></p>
+            <p>30% off Murree packages this weekend only! Book before midnight.</p>
+            <span class="notif-time">1 day ago</span>
+          </div>
+        </div>
+        <div class="notif-item">
+          <div class="notif-icon blue">📍</div>
+          <div class="notif-text">
+            <p><strong>New spot near you</strong></p>
+            <p>Badshahi Mosque is trending this week – 2.1km from you.</p>
+            <span class="notif-time">2 days ago</span>
+          </div>
+        </div>
+        <div class="notif-item">
+          <div class="notif-icon green">⭐</div>
+          <div class="notif-text">
+            <p><strong>Review Reminder</strong></p>
+            <p>How was your Lahore Fort trip? Share your experience!</p>
+            <span class="notif-time">3 days ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BOTTOM NAVIGATION (L3) ── -->
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="nav-item active" id="nav-home" onclick="showScreen('home')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Explore</span>
+    </button>
+    <button class="nav-item" id="nav-trips" onclick="showScreen('trips')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span>My Trips</span>
+    </button>
+    <button class="nav-item" id="nav-saved" onclick="showScreen('saved')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <span>Saved</span>
+    </button>
+    <button class="nav-item" id="nav-profile" onclick="showScreen('profile')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Profile</span>
+    </button>
+  </nav>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

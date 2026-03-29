@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_dashboard.xml
+    [F1] Header shows username + greeting received from LoginActivity via Intent Extras.
+    [F4] fragment_container is the ONLY content area — all UI lives inside Fragments.
+         The Activity itself has no business content widgets.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primary_dark"
+    tools:context=".activities.DashboardActivity">
+
+    <!-- ── Dashboard Header ───────────────────────────────────────────────── -->
+    <LinearLayout
+        android:id="@+id/layout_dashboard_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="16dp"
+        android:background="@color/surface_dark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/btn_dashboard_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="8dp"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="@string/cd_back_magazine"
+                android:src="@drawable/ic_nav_back"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true" />
+
+        <TextView
+            android:id="@+id/tv_app_brand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ROAMIST"
+            android:textColor="@color/accent_orange"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.14" />
+
+            <ImageView
+                android:id="@+id/btn_dashboard_notifications"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_bell"
+                android:contentDescription="@string/notifications"
+                app:tint="#BDBDBD" />
+
+            <TextView
+                android:id="@+id/tv_open_magazine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Magazine"
+                android:textColor="@color/accent_orange"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:paddingStart="8dp"
+                android:paddingEnd="4dp"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <!-- [F1] Populated at runtime from Intent Extra EXTRA_GREETING -->
+        <TextView
+            android:id="@+id/tv_dashboard_greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Welcome back, Ahmed! Explore Pakistan 🌟" />
+
+        <!-- [F1] Populated at runtime from EXTRA_USERNAME + EXTRA_SESSION_TOKEN -->
+        <TextView
+            android:id="@+id/tv_dashboard_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="#9E9E9E"
+            android:textSize="11sp"
+            tools:text="Hi, Ahmed  |  Session: RMST-17432938…" />
+
+        <!-- Orange accent rule -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/accent_orange" />
+
+    </LinearLayout>
+
+    <!-- ── [F4] Fragment Container ────────────────────────────────────────── -->
+    <!--     All page content is loaded into this FrameLayout by the Activity  -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <include
+        android:id="@+id/included_dashboard_bottom_nav"
+        layout="@layout/layout_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

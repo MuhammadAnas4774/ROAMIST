@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="62dp"
+    android:orientation="vertical"
+    android:background="@color/surface_dark"
+    android:elevation="16dp">
+
+    <!-- Top accent line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2A2A2A" />
+
+    <!-- Nav items -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <!-- EXPLORE — active -->
+        <LinearLayout
+            android:id="@+id/nav_explore"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Orange indicator dot -->
+            <View
+                android:id="@+id/dot_nav_explore"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/map_dot"
+                android:layout_marginBottom="4dp" />
+
+            <ImageView
+                android:id="@+id/iv_nav_explore"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_explore"
+                android:tint="@color/accent_orange" />
+
+            <TextView
+                android:id="@+id/tv_nav_explore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Explore"
+                android:textColor="@color/accent_orange"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_marginTop="3dp" />
+        </LinearLayout>
+
+        <!-- MY TRIPS -->
+        <LinearLayout
+            android:id="@+id/nav_trips"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/dot_nav_trips"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/map_dot"
+                android:layout_marginBottom="4dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/iv_nav_trips"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_trips"
+                android:tint="#616161" />
+
+            <TextView
+                android:id="@+id/tv_nav_trips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Trips"
+                android:textColor="#616161"
+                android:textSize="10sp"
+                android:layout_marginTop="3dp" />
+        </LinearLayout>
+
+        <!-- SAVED -->
+        <LinearLayout
+            android:id="@+id/nav_saved"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/dot_nav_saved"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/map_dot"
+                android:layout_marginBottom="4dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/iv_nav_saved"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_heart"
+                android:tint="#616161" />
+
+            <TextView
+                android:id="@+id/tv_nav_saved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saved"
+                android:textColor="#616161"
+                android:textSize="10sp"
+                android:layout_marginTop="3dp" />
+        </LinearLayout>
+
+        <!-- PROFILE -->
+        <LinearLayout
+            android:id="@+id/nav_profile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/dot_nav_profile"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:background="@drawable/map_dot"
+                android:layout_marginBottom="4dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/iv_nav_profile"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_person"
+                android:tint="#616161" />
+
+            <TextView
+                android:id="@+id/tv_nav_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textColor="#616161"
+                android:textSize="10sp"
+                android:layout_marginTop="3dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

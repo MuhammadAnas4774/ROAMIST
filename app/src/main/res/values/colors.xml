@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- Dark grey & orange theme -->
+    <color name="primary_dark">#212121</color>
+    <color name="surface_dark">#303030</color>
+    <color name="surface_medium">#424242</color>
+    <color name="accent_orange">#FF6D00</color>
+    <color name="accent_orange_light">#FFAB40</color>
+    <!-- Legacy aliases (now dark grey + orange) -->
+    <color name="pakistan_green">#212121</color>
+    <color name="pakistan_white">#FFFFFF</color>
+    <color name="accent_gold">#FF6D00</color>
+    <color name="mountain_blue">#424242</color>
+    <color name="desert_sand">#78909C</color>
+    <color name="notification_badge_red">#F44336</color>
+    <color name="status_completed">#4CAF50</color>
+    <color name="status_upcoming">#FF9800</color>
+</resources>
