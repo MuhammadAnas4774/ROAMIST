@@ -70,6 +70,7 @@ A full logic flow map documenting every class and method for requirement traceab
 ---
 
 ## 👥 Contributors
+*   **Muhammad Anas** (MuhammadAnas4774) — Lead Android Developer
 *   **Usman Alamgir** (UsMaNBAjWaa) — Lead Android Developer
 
 ---
